@@ -2,9 +2,10 @@ var http = require("http");
 var fs = require("fs");
 var extract = require("./extract");
 var mime = require("mime");
+var wss = require("./websockets-server");
 
 var handleError = function(err, res) {
-  fs.readFile("app/error.html", function (err, data) {
+  fs.readFile("app/error.html", function(err, data) {
     res.end(data);
   });
 };
